@@ -11,7 +11,7 @@ import { SocketService } from './services/socket.service';
 @NgModule({
   declarations: [
     AppComponent,
-    ChatComponent
+    ChatComponent,
   ],
   imports: [
     BrowserModule,
