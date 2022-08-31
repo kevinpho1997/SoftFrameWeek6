@@ -5,6 +5,7 @@ module.exports = {
             // emit message to all sockets when message is received
             socket.on('message', (message) => {
                 io.emit('message', message);
+                console.log(message);
             })
         });
     }

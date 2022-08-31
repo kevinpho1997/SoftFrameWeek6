@@ -15,7 +15,7 @@ export class ChatComponent implements OnInit {
   constructor(private socketService: SocketService) { }
 
   ngOnInit(): void {
-    this.initIoConnection;
+    this.initIoConnection();
   }
 
   private initIoConnection() {

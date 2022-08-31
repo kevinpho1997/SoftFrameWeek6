@@ -19,15 +19,16 @@ export class SocketService {
   }
 
   send(message: string) {
-    console.log("send");
-    console.log(message);
+    console.log("message:", message);
     this.socket.emit('message', message);
   }
 
   getMessage() {
-    console.log("getMessage()");
     return new Observable(observer => {
-      this.socket.on('message', (data) => {observer.next(data)});
+      this.socket.on('message', (data: string) => {observer.next(data);
+        console.log("getMessage() data:", data);
+      });
+      
     });
   }
 }
