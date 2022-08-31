@@ -9,7 +9,7 @@ import { SocketService } from '../services/socket.service';
 export class ChatComponent implements OnInit {
 
   messageContent: string = "";
-  messages:string[] = [];
+  messages: string[] = [];
   ioConnection: any;
 
   constructor(private socketService: SocketService) { }
@@ -32,10 +32,10 @@ export class ChatComponent implements OnInit {
     if(this.messageContent) {
       this.socketService.send(this.messageContent);
       this.messageContent = "";
-    } else [
+    } else {
       // can't put ; at end of console.log???
-      console.log('no message received')
-    ]
+      console.log('no message received');
+    }
   }
 
 }

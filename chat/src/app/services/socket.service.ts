@@ -14,14 +14,18 @@ export class SocketService {
 
   initSocket() {
     this.socket = io(SERVER_URL);
+    console.log("initSocket()");
     return ()=>{this.socket.disconnect();}
   }
 
   send(message: string) {
+    console.log("send");
+    console.log(message);
     this.socket.emit('message', message);
   }
 
   getMessage() {
+    console.log("getMessage()");
     return new Observable(observer => {
       this.socket.on('message', (data) => {observer.next(data)});
     });
